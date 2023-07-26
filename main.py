@@ -81,7 +81,21 @@ def get_books_data(html_str):
         td = tr.find_all('td', {'class':'field avg_rating'})[0]
         text = td.find_all('div', {'class':'value'})[0]
         book_dict['avg_rating'] = text.text.strip()
-        print(text)
+
+        # parse isbn
+        td = tr.find_all('td', {'class':'field isbn'})[0]
+        text = td.find_all('div', {'class':'value'})[0]
+        book_dict['isbn'] = text.text.strip()
+
+        # parse isbn13
+        td = tr.find_all('td', {'class':'field isbn13'})[0]
+        text = td.find_all('div', {'class':'value'})[0]
+        book_dict['isbn13'] = text.text.strip()
+
+        # parse num of pages
+        td = tr.find_all('td', {'class':'field num_pages'})[0]
+        text = td.find_all('div', {'class':'value'})[0]
+        book_dict['num_pages'] = text.text.strip().split('\n')[0]
 
         # parse rating
         td = tr.find_all('td', {'class':'field rating'})[0]
