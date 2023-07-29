@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
 
 	// make_accept_drop(document.querySelector('.images'));
 
-	bind_title_events();
+	// bind_title_events();
 
 	// document.getElementById('load-img-input').addEventListener('input', (evt) => {
 	// 	// @Speed: maybe we can do some async stuff to optimize this
@@ -92,6 +92,9 @@ window.addEventListener('load', () => {
 	// 		reader.readAsDataURL(file);
 	// 	}
 	// });
+
+	// books = 
+
 	let images = document.querySelector('.images');
 	let img = create_img_with_src('https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522684533l/34273236._SY75_.jpg')
 	images.appendChild(img)
@@ -137,6 +140,18 @@ window.addEventListener('load', () => {
 		return msg;
 	});
 });
+
+function fetchData() {
+    fetch('/get_data')
+    .then(response => response.json())
+    .then(data => {
+        // Handle the received data here
+        displayData(data.data);
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+}
 
 function create_img_with_src(src) {
 	let img = document.createElement('img');

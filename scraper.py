@@ -3,9 +3,6 @@ import time
 from bs4 import BeautifulSoup
 
 
-YEAR = '2020'
-OUTPUT_MD_FILE_PATH = 'markdown_file.md'
-INTRO_PARA_OF_BLOG = f'{YEAR} was a good reading year for me. The Covid induced work-from-home saved ample travel hours for me to fall in love with reading again. Here are the books that I read this year - some of them were delightful; others not so much.\n'
 CHROME_DRIVER_PATH = 'chromedriver'
 MAIN_URL = 'https://www.goodreads.com/review/list/116631395-elifia?shelf=read&sort=date_read'
 
@@ -140,8 +137,8 @@ def filter_and_sort_books(book_list, year):
 
 
 
-if __name__ == '__main__':
-    html_str = get_html_using_selenium(MAIN_URL, CHROME_DRIVER_PATH)
+def scrape(page_url):
+    html_str = get_html_using_selenium(page_url, CHROME_DRIVER_PATH)
     # print(html_str)
     
 
@@ -153,5 +150,13 @@ if __name__ == '__main__':
     # filtered_and_sorted_book_list = filter_and_sort_books(book_list, YEAR)
     # print("3")
 
-
     print("Done")
+
+    return book_list
+
+# html_str = get_html_using_selenium(MAIN_URL, CHROME_DRIVER_PATH)
+#     # print(html_str)
+    
+
+# book_list = get_books_data(html_str)
+# print(book_list)
