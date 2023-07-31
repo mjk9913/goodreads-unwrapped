@@ -1,12 +1,12 @@
 import './App.css';
-import Author from './components/author/Author.jsx';
-import Obscurity from './components/obscurity/Obscurity.jsx';
+import Author from './components/author/Author';
+import Popularity from './components/popularity/Popularity'
 
 function App() {
   return (
     <div className="App">
-      <div class="scroll1"><Author /></div>
-      <div class="scroll2"><Obscurity /></div>
+      <div className="scroll1"><Author /></div>
+      <div className="scroll2"><Popularity /></div>
     </div>
   );
 }
