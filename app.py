@@ -13,8 +13,8 @@ CORS(app)
 @app.route('/scrape', methods=['POST'])
 def scrape():
     data = []
-    # url = request.json.get('url')
-    url = "https://www.goodreads.com/review/list/116631395-elifia?ref=nav_mybooks&shelf=read"
+    url = request.json.get('url')
+    # url = "https://www.goodreads.com/review/list/116631395-elifia?ref=nav_mybooks&shelf=read"
     print(url)
 
     books = scraper.scrape(url)

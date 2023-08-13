@@ -1,0 +1,40 @@
+.title {
+    /* width: 100vw; */
+    /* height:60vh; */
+    padding: 18vh 15vw 0 15vw;
+    display:flex;
+    z-index: 1;
+    align-items: center;
+    flex-direction: column;
+    font-size: 64px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.input-container {
+    padding: 18vh 10vw 0 10vw; /* Adjust padding to increase width */
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+}
+  
+.input-field {
+    width: 600px; /* Increase the width of the input field */
+    padding: 12px; /* Increase padding for more spacing */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+  
+.submit-button {
+    background-color: #1e86f5;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
