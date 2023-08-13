@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './home.css';
 
-function InputURL() {
+function InputURL({ onFormSubmit }) {
   const [url, setUrl] = useState('');
 
   const handleSubmit = async (e) => {
@@ -9,16 +9,17 @@ function InputURL() {
 
     try {
       const response = await fetch('http://127.0.0.1:5000/scrape', {
-        method: 'POST', // You can change this to the appropriate HTTP method
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url }), // Send the URL in the request body
+        body: JSON.stringify({ url }),
       });
 
       if (response.ok) {
-        console.log('Server request successful');
-        // You can perform additional actions after a successful request here
+        var books = await response.json(); // Parse the JSON response
+        console.log('Server response:', books); 
+        onFormSubmit(books); // Notify parent component (App) about the successful response
       } else {
         console.error('Server request failed');
       }
@@ -45,11 +46,11 @@ function InputURL() {
   );
 }
 
-export const Home = () => {
+export const Home = ({ onFormSubmit }) => {
   return (
     <div className="title">
       Goodreads Unwrapped
-      <InputURL />
+      <InputURL onFormSubmit={onFormSubmit} />
     </div>
   );
 };
