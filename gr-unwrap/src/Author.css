@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+.Page{
+    width: 100%;
+    height: 100%;
+    background-color: #F4F1EA;
+    font-family: 'Inter';font-size: 2rem;
+    font-weight:400;
+    letter-spacing: 0.2px;
+}
+
+.intro, .authorN, .authorC{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: #554444;
+}
+
+.authorN{
+    font-family: 'Patua One', cursive;
+    font-size: 4rem;
+}
+
+.boldVar{
+    font-weight:800;
+}
